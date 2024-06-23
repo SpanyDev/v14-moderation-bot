@@ -3,7 +3,7 @@ const ms = require("ms");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName(`suturma-kaldır`)
+        .setName(`susturma-kaldır`)
         .setDescription(`Kullanıcının susutmasını kaldırırsınız.`)
         .addUserOption(option => option.setName(`kullanıcı`).setDescription(`Susturulacak kullanıcıyı seçin.`).setRequired(true))
         .addStringOption(option => option.setName(`sebep`).setDescription(`Susturma sebebini belirtin.`).setRequired(true))
