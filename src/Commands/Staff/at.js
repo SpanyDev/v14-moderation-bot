@@ -22,9 +22,9 @@ module.exports = {
         if (botMember.roles.highest.position <= kickMember.roles.highest.position) return interaction.reply({ embeds: [client.embed(`Kişi botun rolünden daha üst role sahip olduğu için bunu yapamam.`, `hatalı`)] });
 
         await guild.members.kick(member, { reason: reason }).then(() => {
-            member.send(`**${guild.name}** adlı sunucudan **${reason}** sebebiyle yasaklandınız.`).catch(() => { });
+            member.send(`**${guild.name}** adlı sunucudan **${reason}** sebebiyle atıldı..`).catch(() => { });
             interaction.reply({
-                embeds: [client.embed(`Başarıyla ${member} adlı kullanıcı sunucudan yasaklandı.`, `başarılı`)],
+                embeds: [client.embed(`Başarıyla ${member} adlı kullanıcı sunucudan atıldı..`, `başarılı`)],
             })
         })
     },
