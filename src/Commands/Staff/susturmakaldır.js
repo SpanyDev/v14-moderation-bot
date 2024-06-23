@@ -17,7 +17,6 @@ module.exports = {
         const botMember = interaction.guild.members.cache.get(client.user.id);
 
         if (!timeMember) return interaction.reply({ embeds: [client.embed(`Bu kullanıcı sunucuda bulunmuyor.`, `hatalı`)] });
-        if (!timeMember.communicationDisabledUntilTimestamp) return interaction.reply({ embeds: [client.embed(`Bu kullanıcı zaten susturulmamış durumda.`, `hatalı`)] });
         if (interaction.member.roles.highest.position <= timeMember.roles.highest.position) return interaction.reply({ embeds: [client.embed(`Kişi sizden daha üst role sahip olduğu için bunu yapamazsınız.`, `hatalı`)] });
         if (botMember.roles.highest.position <= timeMember.roles.highest.position) return interaction.reply({ embeds: [client.embed(`Kişi botun rolünden daha üst role sahip olduğu için bunu yapamam.`, `hatalı`)] });
 
