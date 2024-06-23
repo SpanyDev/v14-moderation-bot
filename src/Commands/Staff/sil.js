@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require("discord.js")
+const ms = require("ms")
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,7 +16,6 @@ module.exports = {
 
         if (miktar <= 0) return interaction.reply({ embeds: [client.embed(`0'dan büyük bir sayı girmelisin.`, `hatalı`)] });
         if (miktar > 100) return interaction.reply({ embeds: [client.embed(`100'den fazla mesaj silemezsin.`, `hatalı`)] });
-        if (kanal.messages.cache.size) return interaction.reply({ embeds: [client.embed(`Bu kanalda silinecek mesaj bulunmamakta.`, `hatalı`)] });
 
         let fetchedMessagesSize;
         await kanal.messages.fetch({ limit: miktar }).then(async (fetchedMessages) => {
