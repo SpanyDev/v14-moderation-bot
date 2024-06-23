@@ -31,7 +31,7 @@ module.exports = {
 
         await timeMember.timeout(timeoutMS, reason).then(() => {
             interaction.reply({
-                embeds: [client.embed(`Başarıyla ${member} adlı kullanıcı ${time} ${timeType.replace("m", "dakika").replace("h", "saat").replace("d", "gün")} boyunca susturuldu.`, `başarılı`)],
+                embeds: [client.embed(`Başarıyla ${member} adlı kullanıcı ${time} ${time} boyunca susturuldu.`, `başarılı`)],
             })
         })
     },
